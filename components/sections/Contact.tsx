@@ -154,7 +154,7 @@ const Contact = () => {
                 </p>
                 <Button
                   className="w-full bg-white text-tupla-primary hover:bg-gray-100"
-                  onClick={() => window.open('https://wa.me/5551234567', '_blank')}
+                  onClick={() => window.open('https://wa.me/3193142840', '_blank')}
                 >
                   Chatear por WhatsApp
                 </Button>
