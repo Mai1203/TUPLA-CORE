@@ -22,6 +22,15 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+  // Al recargar la página, desplaza suavemente al inicio
+  const element = document.querySelector('#inicio');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+}, []);
+
+
   const scrollToSection = (sectionId: string) => {
     const element = document.querySelector(sectionId);
     if (element) {
@@ -43,18 +52,18 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 min-h-screen flex items-center">
-        <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
+        <div className="flex flex-col lg:flex-row items-center gap-12 w-full">
           {/* Left Column - Text Content */}
-          <div className="text-white space-y-8 animate-fade-in">
+          <div className="text-white space-y-8 animate-fade-in text-center lg:text-left w-full">
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 Transformamos Ideas en{" "}
                 <span className="text-tupla-accent relative">
                   {rotatingTexts[currentText]}
                   <div className="absolute -bottom-2 left-0 w-full h-1 bg-tupla-accent rounded animate-pulse"></div>
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed">
                 Desarrollamos soluciones tecnológicas innovadoras para empresas
                 que buscan digitalizar sus operaciones y alcanzar el éxito
                 digital.
@@ -62,7 +71,7 @@ const Hero = () => {
             </div>
 
             {/* Features List */}
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <Globe className="h-6 w-6 text-tupla-accent" />
                 <span className="text-sm font-medium">Web Responsivo</span>
@@ -78,7 +87,7 @@ const Hero = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button
                 onClick={() => scrollToSection("#contacto")}
                 size="lg"
@@ -91,7 +100,8 @@ const Hero = () => {
                 onClick={() => scrollToSection("#portafolio")}
                 variant="outline"
                 size="lg"
-                className="border-2 border-tupla-primary text-tupla-primary hover:bg-tupla-primary hover:text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300"
+                
+                className="bg-white text-tupla-primary border-2 border-tupla-primary font-semibold px-8 py-3 rounded-xl shadow-md hover:bg-tupla-primary hover:text-white hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out"
               >
                 Ver Proyectos
               </Button>
@@ -99,23 +109,23 @@ const Hero = () => {
           </div>
 
           {/* Right Column - Visual Element */}
-          <div className="relative animate-slide-up">
+          <div className="w-full max-w-md lg:max-w-lg animate-slide-up">
             <div className="relative z-10 bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
               <div className="space-y-6">
                 {/* Mock Code Editor */}
-                <div className="bg-tupla-dark rounded-lg p-4">
+                <div className="bg-tupla-dark rounded-lg p-4 overflow-x-auto">
                   <div className="flex items-center space-x-2 mb-4">
                     <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                     <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                   </div>
-                  <pre className="text-white bg-gray-900 p-4 rounded-md">
+                  <pre className="text-white bg-gray-900 p-4 rounded-md text-sm">
                     <code>
                       {`const solution = {
-                        web: 'responsive',
-                        mobile: 'native',
-                        software: 'custom'
-                      }`}
+  web: 'responsive',
+  mobile: 'native',
+  software: 'custom'
+};`}
                     </code>
                   </pre>
                 </div>
@@ -124,13 +134,13 @@ const Hero = () => {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center p-4 bg-white/5 rounded-lg">
                     <div className="text-2xl font-bold text-tupla-accent">
-                      50+
+                      10+
                     </div>
                     <div className="text-sm text-gray-300">Proyectos</div>
                   </div>
                   <div className="text-center p-4 bg-white/5 rounded-lg">
                     <div className="text-2xl font-bold text-tupla-accent">
-                      99%
+                      94%
                     </div>
                     <div className="text-sm text-gray-300">Satisfacción</div>
                   </div>
