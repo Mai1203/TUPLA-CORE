@@ -23,20 +23,20 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Teléfono',
-      details: '+1 (555) 123-4567',
+      details: '+51 (319) 314-2840',
       subtitle: 'Lun - Vie: 9:00 AM - 6:00 PM'
     },
     {
       icon: Mail,
       title: 'Email',
-      details: 'hola@tuplacore.com',
+      details: 'TUPLACORE@gmail.com',
       subtitle: 'Respuesta en 24 horas'
     },
     {
       icon: MapPin,
       title: 'Ubicación',
-      details: 'Ciudad de México, CDMX',
-      subtitle: 'Atendemos todo México'
+      details: 'Ciudad de Pasto, Colombia',
+      subtitle: 'Atendemos todo Colombia'
     },
     {
       icon: Clock,

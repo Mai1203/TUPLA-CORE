@@ -55,10 +55,10 @@ const About = () => {
   ];
 
   const stats = [
-    { number: '50+', label: 'Proyectos Completados' },
-    { number: '25+', label: 'Clientes Satisfechos' },
-    { number: '3+', label: 'Años de Experiencia' },
-    { number: '99%', label: 'Tasa de Satisfacción' }
+    { number: '10+', label: 'Proyectos Completados' },
+    { number: '10+', label: 'Clientes Satisfechos' },
+    { number: '2+', label: 'Años de Experiencia' },
+    { number: '94%', label: 'Tasa de Satisfacción' }
   ];
 
   return (

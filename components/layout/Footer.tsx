@@ -56,15 +56,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-tupla-accent" />
-                <span className="text-gray-300">hola@tuplacore.com</span>
+                <span className="text-gray-300">TUPLACORE@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-tupla-accent" />
-                <span className="text-gray-300">+1 (555) 123-4567</span>
+                <span className="text-gray-300">+57 (319) 314-2840</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-tupla-accent" />
-                <span className="text-gray-300">Ciudad de México, CDMX</span>
+                <span className="text-gray-300">Ciudad de Pasto, Colombia</span>
               </div>
             </div>
           </div>

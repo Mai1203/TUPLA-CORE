@@ -165,12 +165,12 @@ const Services = () => {
               { step: '04', title: 'Entrega', desc: 'Desplegamos y brindamos soporte' }
             ].map((item, index) => (
               <div key={index} className="text-center group">
-                <div className="relative mb-4">
-                  <div className="w-16 h-16 bg-gradient-to-br from-tupla-primary to-tupla-accent rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto group-hover:scale-110 transition-transform duration-300">
+                <div className="relative mb-4 flex justify-center">
+                  <div className="w-16 h-16 bg-tupla-primary rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto group-hover:scale-110 transition-transform duration-300">
                     {item.step}
                   </div>
                   {index < 3 && (
-                    <div className="hidden md:block absolute top-8 left-16 w-full h-0.5 bg-gradient-to-r from-tupla-primary to-tupla-accent"></div>
+                    <div className="hidden md:block absolute left-full top-1/2 transform -translate-y-1/2 w-16 h-0.5 bg-tupla-primary"></div>
                   )}
                 </div>
                 <h4 className="text-xl font-semibold text-tupla-dark mb-2">{item.title}</h4>
