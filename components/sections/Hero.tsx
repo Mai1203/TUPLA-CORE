@@ -118,10 +118,9 @@ const Hero = () => {
               </Button>
               <Button
                 onClick={() => scrollToSection("#portafolio")}
-                variant="outline"
                 size="lg"
-                
-                className="bg-white text-tupla-primary border-2 border-tupla-primary font-semibold px-8 py-3 rounded-xl shadow-md hover:bg-tupla-primary hover:text-white hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out"
+                className="bg-tupla-primary hover:bg-tupla-primary/80 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+
               >
                 Ver Proyectos
               </Button>

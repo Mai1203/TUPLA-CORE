@@ -23,6 +23,9 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll); // Limpieza
   }, []);
 
+  const [activeItem, setActiveItem] = useState(null);
+
+
   // Lista de secciones del menú
   const navItems = [
     { name: 'Inicio', href: '#inicio' },
@@ -44,12 +47,13 @@ const Navbar = () => {
   return (
     // Navbar fijo en la parte superior
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg' // Si hizo scroll: fondo blanco, blur y sombra
-          : 'bg-transparent' // Si no hizo scroll: transparente
-      }`}
+     className={`fixed top-0 left-0 right-0 z-50 overflow-hidden transition-all duration-700 ease-out 
+    ${scrolled 
+      ? 'bg-gradient-to-r from-white via-[#f5f5f5] to-white backdrop-blur-xl border-b shadow-[0_0_20px_rgba(30,144,255,0.3)] animate-reveal-tech glow-tech hologram before:content-[""] before:absolute before:bottom-0 before:left-0 before:h-1 before:w-full before:bg-gradient-to-r before:from-transparent before:via-[#1E90FF] before:to-transparent before:animate-scan-line border-[#1E90FF]'
+      : 'bg-transparent border-transparent before:content-none'
+    }`}
     >
+
       {/* Contenedor centralizado del contenido del navbar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -106,17 +110,30 @@ const Navbar = () => {
         {/* Menú móvil desplegable */}
         {isOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-md rounded-lg mt-2 shadow-lg">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-black/10 backdrop-blur-xl rounded-md mt-2 shadow-lg">
               {/* Ítems del menú móvil */}
               {navItems.map((item) => (
                 <button
                   key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-tupla-dark hover:text-tupla-primary block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200"
+                  onClick={() => {
+                    scrollToSection(item.href);
+                    setActiveItem(item.name);
+                  }}
+                  className={`bg-white relative group block w-full px-4 py-3 text-left text-base font-semibold rounded-md transition-all duration-300
+                    ${
+                      activeItem === item.name
+                        ? 'text-tupla-primary bg-white border border-transparent'
+                        : 'text-tupla-dark bg-white border border-transparent'
+                    }`}
                 >
                   {item.name}
+                  {/* Línea azul bajo el ítem activo */}
+                  {activeItem === item.name && (
+                    <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-tupla-primary rounded-full transition-all duration-300"></span>
+                  )}
                 </button>
               ))}
+
               {/* Botón de contacto en móvil */}
               <Button
                 onClick={() => scrollToSection('#contacto')}
