@@ -5,7 +5,10 @@ import { ArrowRight, Zap, Smartphone, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
-  const [currentText, setCurrentText] = useState(0);
+  const [displayedText, setDisplayedText] = useState('');
+  const [textIndex, setTextIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
 
   const rotatingTexts = [
     "Páginas Web Modernas",
@@ -15,12 +18,29 @@ const Hero = () => {
   ];
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentText((prev) => (prev + 1) % rotatingTexts.length);
-    }, 3000);
+    const fullText = rotatingTexts[textIndex];
+    const speed = isDeleting ? 50 : 100; // velocidad de escritura y borrado
 
-    return () => clearInterval(interval);
-  }, []);
+    const timeout = setTimeout(() => {
+      setDisplayedText((prev) =>
+        isDeleting ? fullText.substring(0, prev.length - 1) : fullText.substring(0, prev.length + 1)
+      );
+
+      // Si terminó de escribir, espera antes de borrar
+      if (!isDeleting && displayedText === fullText) {
+        setTimeout(() => setIsDeleting(true), 1000);
+      }
+
+      // Si terminó de borrar, pasa al siguiente texto
+      if (isDeleting && displayedText === '') {
+        setIsDeleting(false);
+        setTextIndex((prev) => (prev + 1) % rotatingTexts.length);
+      }
+    }, speed);
+
+    return () => clearTimeout(timeout);
+  }, [displayedText, isDeleting, textIndex]);
+
 
   useEffect(() => {
   // Al recargar la página, desplaza suavemente al inicio
@@ -58,9 +78,9 @@ const Hero = () => {
             <div className="space-y-4">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 Transformamos Ideas en{" "}
-                <span className="text-tupla-accent relative">
-                  {rotatingTexts[currentText]}
-                  <div className="absolute -bottom-2 left-0 w-full h-1 bg-tupla-accent rounded animate-pulse"></div>
+                <span className="text-tupla-accent relative min-h-[1em] inline-block">
+                  {displayedText}
+                  <span className="animate-pulse">|</span> {/* cursor parpadeante */}
                 </span>
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed">

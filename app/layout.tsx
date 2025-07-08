@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   keywords: 'desarrollo web, aplicaciones móviles, software a medida, tecnología, digitalización, TUPLA CORE',
   authors: [{ name: 'TUPLΛ CORE' }],
   viewport: 'width=device-width, initial-scale=1',
+  icons: {
+    icon: '/favicon.svg', 
+  },
 };
 
 export default function RootLayout({
