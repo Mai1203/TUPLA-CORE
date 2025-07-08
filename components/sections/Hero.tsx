@@ -77,7 +77,7 @@ const Hero = () => {
           <div className="text-white space-y-8 animate-fade-in text-center lg:text-left w-full">
             <div className="space-y-4">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Transformamos Ideas en{" "}
+                Transformamos Ideas en{" "} <br />
                 <span className="text-tupla-accent relative min-h-[1em] inline-block">
                   {displayedText}
                   <span className="animate-pulse">|</span> {/* cursor parpadeante */}
