@@ -23,7 +23,8 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll); // Limpieza
   }, []);
 
-  const [activeItem, setActiveItem] = useState(null);
+  const [activeItem, setActiveItem] = useState<string | null>(null);
+
 
 
   // Lista de secciones del menú
