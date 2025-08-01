@@ -1,6 +1,8 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { MantineProvider } from '@mantine/core';
+import '@mantine/core/styles.css'; // Estilos globales de Mantine
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'TUPLΛ CORE' }],
   viewport: 'width=device-width, initial-scale=1',
   icons: {
-    icon: '/favicon.svg', 
+    icon: '/favicon.svg',
   },
 };
 
@@ -26,7 +28,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={inter.className}>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <MantineProvider
+          defaultColorScheme="light"
+          theme={{
+            fontFamily: 'Inter, sans-serif',
+          }}
+        >
+          {children}
+        </MantineProvider>
+      </body>
     </html>
   );
 }
