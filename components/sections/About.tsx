@@ -1,64 +1,54 @@
-'use client';
+"use client";
 
-import { Users, Target, Eye, Award, Code, Heart } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { Users, Target, Eye, Award, Code, Heart } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
 
 const About = () => {
   const values = [
     {
       icon: Code,
-      title: 'Excelencia Técnica',
-      description: 'Utilizamos las últimas tecnologías y mejores prácticas para garantizar soluciones de alta calidad.'
+      title: "Excelencia Técnica",
+      description:
+        "Aplicamos tecnologías de vanguardia y buenas prácticas de desarrollo para crear soluciones robustas, escalables y eficientes.",
     },
     {
       icon: Users,
-      title: 'Enfoque Humano',
-      description: 'Priorizamos la comunicación cercana y entendemos las necesidades específicas de cada cliente.'
+      title: "Colaboración Humana",
+      description:
+        "Construimos relaciones cercanas con nuestros clientes, entendiendo sus retos y trabajando juntos como un solo equipo.",
     },
     {
       icon: Award,
-      title: 'Compromiso',
-      description: 'Nos comprometemos con plazos de entrega y mantenemos la más alta calidad en cada proyecto.'
+      title: "Compromiso y Responsabilidad",
+      description:
+        "Asumimos cada proyecto con seriedad, cumpliendo los plazos acordados y garantizando resultados de alto impacto.",
     },
     {
       icon: Heart,
-      title: 'Pasión',
-      description: 'Amamos lo que hacemos y eso se refleja en cada línea de código y cada solución que creamos.'
-    }
+      title: "Pasión por la Innovación",
+      description:
+        "Nos mueve el entusiasmo por la tecnología, la creatividad y el deseo constante de superar expectativas.",
+    },
   ];
 
   const team = [
+    
     {
-      name: 'Alexandra Torres',
-      role: 'CEO & Full Stack Developer',
-      image: 'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Especialista en arquitectura de software y liderazgo técnico con más de 8 años de experiencia.'
+      name: "Sergio Muñoz",
+      role: "Full Stack Developer & AI Enthusiast",
+      image:
+      "/me/perfilsergio.webp",
+      description:
+        "Desarrollador full stack con experiencia en proyectos freelance, especializado en Python, JavaScript y visión por computador, apasionado por la innovación tecnológica y la creación de soluciones inteligentes orientadas al usuario.",
     },
-    {
-      name: 'Carlos Mendoza',
-      role: 'Mobile Developer',
-      image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Experto en desarrollo móvil nativo y multiplataforma con enfoque en UX/UI.'
-    },
-    {
-      name: 'María González',
-      role: 'UI/UX Designer',
-      image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Diseñadora creativa especializada en experiencias digitales intuitivas y atractivas.'
-    },
-    {
-      name: 'Diego Ramírez',
-      role: 'Backend Developer',
-      image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Arquitecto de sistemas backend escalables y especialista en bases de datos.'
-    }
   ];
 
   const stats = [
-    { number: '10+', label: 'Proyectos Completados' },
-    { number: '10+', label: 'Clientes Satisfechos' },
-    { number: '2+', label: 'Años de Experiencia' },
-    { number: '94%', label: 'Tasa de Satisfacción' }
+    { number: "10+", label: "Proyectos Completados" },
+    { number: "10+", label: "Clientes Satisfechos" },
+    { number: "2+", label: "Años de Experiencia" },
+    { number: "94%", label: "Tasa de Satisfacción" },
   ];
 
   return (
@@ -70,8 +60,12 @@ const About = () => {
             Conoce a TUPLΛ CORE
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Somos un equipo apasionado por la tecnología, comprometido con transformar 
-            ideas innovadoras en soluciones digitales que impulsan el crecimiento de tu negocio.
+            Somos un equipo apasionado por la tecnología y la innovación,
+            comprometido con transformar tus ideas en soluciones digitales
+            sólidas, funcionales y escalables, acompañamos a tu negocio en su
+            evolución digital, impulsando su crecimiento y competitividad a
+            través de la colaboración, el diseño centrado en el usuario y el uso
+            estratégico de la tecnología.
           </p>
         </div>
 
@@ -84,12 +78,18 @@ const About = () => {
                 <div className="p-3 bg-gradient-to-br from-tupla-primary to-tupla-accent rounded-lg text-white">
                   <Target className="h-6 w-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-tupla-dark">Nuestra Misión</h3>
+                <h3 className="text-2xl font-bold text-tupla-dark">
+                  Nuestra Misión
+                </h3>
               </div>
               <p className="text-gray-600 leading-relaxed text-lg">
-                Democratizar la tecnología para pequeñas y medianas empresas, proporcionando 
-                soluciones digitales accesibles, innovadoras y de alta calidad que les permitan 
-                competir en el mercado digital actual con herramientas de clase mundial.
+                Nuestra misión es empoderar a pequeñas y medianas empresas a
+                través del acceso democrático a la tecnología, ofreciendo
+                soluciones digitales de vanguardia, accesibles y de alta
+                calidad, nos comprometemos a impulsar su transformación digital
+                con herramientas innovadoras y profesionales, que les permitan
+                competir con confianza, adaptarse al cambio y destacar en un
+                mercado global cada vez más exigente.
               </p>
             </CardContent>
           </Card>
@@ -101,12 +101,17 @@ const About = () => {
                 <div className="p-3 bg-gradient-to-br from-tupla-accent to-tupla-primary rounded-lg text-white">
                   <Eye className="h-6 w-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-tupla-dark">Nuestra Visión</h3>
+                <h3 className="text-2xl font-bold text-tupla-dark">
+                  Nuestra Visión
+                </h3>
               </div>
               <p className="text-gray-600 leading-relaxed text-lg">
-                Convertirnos en el aliado tecnológico de referencia para empresas que buscan 
-                innovar y crecer, siendo reconocidos por nuestra excelencia técnica, 
-                compromiso con el cliente y capacidad de transformar ideas en realidades digitales exitosas.
+                Nuestra visión es convertirnos en el aliado tecnológico de
+                confianza para las empresas que buscan innovar, crecer y liderar
+                en el entorno digital y Aspiramos a ser reconocidos por nuestra
+                excelencia técnica, nuestro compromiso genuino con el cliente y
+                nuestra capacidad para transformar ideas en soluciones digitales
+                exitosas, sostenibles y con impacto real.
               </p>
             </CardContent>
           </Card>
@@ -190,9 +195,7 @@ const About = () => {
                 <div className="text-4xl md:text-5xl font-bold text-tupla-primary mb-2 group-hover:text-tupla-accent transition-colors duration-300">
                   {stat.number}
                 </div>
-                <div className="text-gray-600 font-medium">
-                  {stat.label}
-                </div>
+                <div className="text-gray-600 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
