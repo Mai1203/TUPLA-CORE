@@ -38,10 +38,18 @@ const About = () => {
       name: "Sergio Muñoz",
       role: "Full Stack Developer & AI Enthusiast",
       image:
-      "/me/perfilsergio.webp",
+      "/img/team/perfilsergio.webp",
       description:
         "Desarrollador full stack con experiencia en proyectos freelance, especializado en Python, JavaScript y visión por computador, apasionado por la innovación tecnológica y la creación de soluciones inteligentes orientadas al usuario.",
     },
+    {
+      name: "Michael Coral",
+      role: "Full stack Developer & Web and Mobile Frontend Developer",
+      image:
+      "/img/team/perfilmichael.webp",
+      description:
+        "Experiencia sólida en tecnologías frontend modernas dominas React, Next.js, React Native, HTML, CSS y JavaScript, que son tecnologías clave para la creación de interfaces web y móviles modernas.",
+    }
   ];
 
   const stats = [
@@ -154,15 +162,17 @@ const About = () => {
           <h3 className="text-3xl font-bold text-tupla-dark text-center mb-12">
             Nuestro Equipo
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
             {team.map((member, index) => (
               <Card
                 key={index}
-                className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 group overflow-hidden"
+                className="bg-white w-full max-w-sm shadow-lg hover:shadow-xl transition-all duration-300 group overflow-hidden"
               >
                 <div className="relative">
-                  <img
+                  <Image
                     src={member.image}
+                    width={400}
+                    height={200}
                     alt={member.name}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                   />
