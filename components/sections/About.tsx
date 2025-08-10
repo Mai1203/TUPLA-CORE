@@ -176,12 +176,16 @@ const About = () => {
                     alt={member.name}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-tupla-dark/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-tupla-dark/50 to-transparent opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-opacity duration-300" />
+
+                  <div className="absolute bottom-2 left-5">
+                    <h4 className="text-lg font-extrabold text-white mb-1">
+                      {member.name}
+                    </h4>
+                  </div>
+
                 </div>
                 <CardContent className="p-6">
-                  <h4 className="text-xl font-semibold text-tupla-dark mb-1">
-                    {member.name}
-                  </h4>
                   <p className="text-tupla-primary font-medium mb-3">
                     {member.role}
                   </p>

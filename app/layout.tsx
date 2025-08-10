@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css'; // Estilos globales de Mantine
+import AOSProvider from '@/components/ui/aos/AOSProvider';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -35,7 +36,9 @@ export default function RootLayout({
             fontFamily: 'Inter, sans-serif',
           }}
         >
-          {children}
+          <AOSProvider>
+            {children}
+          </AOSProvider>
         </MantineProvider>
       </body>
     </html>
