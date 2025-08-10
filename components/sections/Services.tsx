@@ -65,17 +65,28 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-tupla-dark mb-6">
+          <h2 
+            data-aos="fade-up"
+            className="text-4xl md:text-5xl font-bold text-tupla-dark mb-6"
+          >
             Nuestros Servicios
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+
+          <p 
+            data-aos="zoom-in"
+            data-aos-delay="150"
+            className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+          >
             Ofrecemos soluciones tecnológicas integrales que transforman la manera 
             en que tu empresa opera en el mundo digital.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div 
+          data-aos="fade-up"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+        >
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
@@ -152,7 +163,11 @@ const Services = () => {
         </div>
 
         {/* Process Section */}
-        <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg animate-slide-up">
+        <div 
+          data-aos="fade-up"
+          data-aos-delay="300"
+          className="bg-white rounded-2xl p-8 md:p-12 shadow-lg animate-slide-up"
+        >
           <h3 className="text-3xl font-bold text-tupla-dark text-center mb-12">
             Nuestro Proceso de Trabajo
           </h3>

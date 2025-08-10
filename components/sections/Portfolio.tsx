@@ -86,7 +86,10 @@ const Portfolio = () => {
     <section id="portafolio" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
+        <div 
+          className="text-center mb-16"
+          data-aos="fade-up"
+        >
           <h2 className="text-4xl md:text-5xl font-bold text-tupla-dark mb-6">
             Nuestro Portafolio
           </h2>
@@ -121,7 +124,8 @@ const Portfolio = () => {
             <div
               key={project.id}
               className="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-scale-in"
-              style={{ animationDelay: `${index * 100}ms` }}
+              data-aos="zoom-in"
+              data-aos-delay={index * 100}
             >
               {/* Project Image */}
               <div className="relative overflow-hidden h-48">
@@ -198,7 +202,10 @@ const Portfolio = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center mt-16 p-8 bg-gradient-to-r from-tupla-primary to-tupla-accent rounded-2xl text-white animate-slide-up">
+        <div 
+          data-aos="fade-up"
+          className="text-center mt-16 p-8 bg-gradient-to-r from-tupla-primary to-tupla-accent rounded-2xl text-white animate-slide-up"
+        >
           <h3 className="text-2xl md:text-3xl font-bold mb-4">
             ¿Tienes un proyecto en mente?
           </h3>

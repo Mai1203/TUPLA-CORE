@@ -165,6 +165,8 @@ const About = () => {
           <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
             {team.map((member, index) => (
               <Card
+                data-aos="flip-left"
+                data-aos-delay={index * 150}
                 key={index}
                 className="bg-white w-full max-w-sm shadow-lg hover:shadow-xl transition-all duration-300 group overflow-hidden"
               >
