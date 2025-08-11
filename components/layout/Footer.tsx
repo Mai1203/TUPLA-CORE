@@ -126,7 +126,7 @@ const Footer = () => {
 
             {/* Newsletter */}
             <div className="space-y-3">
-              <h4 className="text-lg font-medium text-white">Newsletter</h4>
+              <h4 className="text-lg font-medium text-white">Boletin Digital</h4>
               <div className="flex">
                 <input
                   type="email"

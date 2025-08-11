@@ -5,10 +5,9 @@ import { ArrowRight, Zap, Smartphone, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
-  const [displayedText, setDisplayedText] = useState('');
+  const [displayedText, setDisplayedText] = useState("");
   const [textIndex, setTextIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-
 
   const rotatingTexts = [
     "Páginas Web Modernas",
@@ -23,7 +22,9 @@ const Hero = () => {
 
     const timeout = setTimeout(() => {
       setDisplayedText((prev) =>
-        isDeleting ? fullText.substring(0, prev.length - 1) : fullText.substring(0, prev.length + 1)
+        isDeleting
+          ? fullText.substring(0, prev.length - 1)
+          : fullText.substring(0, prev.length + 1)
       );
 
       // Si terminó de escribir, espera antes de borrar
@@ -32,7 +33,7 @@ const Hero = () => {
       }
 
       // Si terminó de borrar, pasa al siguiente texto
-      if (isDeleting && displayedText === '') {
+      if (isDeleting && displayedText === "") {
         setIsDeleting(false);
         setTextIndex((prev) => (prev + 1) % rotatingTexts.length);
       }
@@ -41,15 +42,13 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, [displayedText, isDeleting, textIndex]);
 
-
   useEffect(() => {
-  // Al recargar la página, desplaza suavemente al inicio
-  const element = document.querySelector('#inicio');
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
-  }
-}, []);
-
+    // Al recargar la página, desplaza suavemente al inicio
+    const element = document.querySelector("#inicio");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.querySelector(sectionId);
@@ -77,10 +76,11 @@ const Hero = () => {
           <div className="text-white space-y-8 animate-fade-in text-center lg:text-left w-full">
             <div className="space-y-4">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Transformamos Ideas en{" "} <br />
+                Transformamos Ideas en <br />
                 <span className="text-tupla-accent relative min-h-[1em] inline-block">
                   {displayedText}
-                  <span className="animate-pulse">|</span> {/* cursor parpadeante */}
+                  <span className="animate-pulse">|</span>{" "}
+                  {/* cursor parpadeante */}
                 </span>
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed">
@@ -120,7 +120,6 @@ const Hero = () => {
                 onClick={() => scrollToSection("#portafolio")}
                 size="lg"
                 className="bg-tupla-primary hover:bg-tupla-primary/80 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-
               >
                 Ver Proyectos
               </Button>
