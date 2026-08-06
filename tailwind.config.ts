@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
+        audiowide: ['var(--font-audiowide)', 'sans-serif'],
         inter: ['var(--font-inter)', 'sans-serif'],
       },
       backgroundImage: {
@@ -26,10 +27,8 @@ const config: Config = {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
 
-        'tupla-primary': '#1E90FF',  // azul morado
-        'tupla-accent': '#00C896',   // violeta
-        'tupla-dark': '#121212',     // negro grisáceo
-        'tupla-light': '#F4F4F4',    // gris muy claro
+        'tupla-primary': 'hsl(var(--tupla-primary))',
+        'tupla-accent': 'hsl(var(--tupla-accent))',
 
         card: {
           DEFAULT: 'hsl(var(--card))',
@@ -62,13 +61,6 @@ const config: Config = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        chart: {
-          '1': 'hsl(var(--chart-1))',
-          '2': 'hsl(var(--chart-2))',
-          '3': 'hsl(var(--chart-3))',
-          '4': 'hsl(var(--chart-4))',
-          '5': 'hsl(var(--chart-5))',
-        },
       },
       keyframes: {
         'accordion-down': {

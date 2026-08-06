@@ -1,275 +1,191 @@
-@import "aos/dist/aos.css";
 
+@import url('https://fonts.googleapis.com/css2?family=Audio+Wide&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    /* Pure Minimalist White Theme */
+    --background: 0 0% 100%; /* #FFFFFF */
+    --foreground: 0 0% 0%;   /* #000000 */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --card-foreground: 0 0% 0%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 210 100% 56%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 210 100% 56%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.75rem;
-    
-    /* Custom TUPLΛ CORE colors */
-    --tupla-primary: 210 100% 56%; /* #1E90FF */
-    --tupla-dark: 0 0% 7%; /* #121212 */
-    --tupla-accent: 162 100% 39%; /* #00C896 */
-    --tupla-light: 0 0% 96%; /* #F4F4F4 */
+    --popover-foreground: 0 0% 0%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 28 11% 94%;  /* Very subtle beige from Moda */
+    --secondary-foreground: 0 0% 0%;
+    --muted: 28 11% 94%;
+    --muted-foreground: 0 0% 35%;
+    --accent: 0 0% 92%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 0%;
+    --radius: 0.5rem;
+    --tupla-primary: 0 0% 0%;
+    --tupla-accent: 0 0% 35%;
   }
-  
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 210 100% 56%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 210 100% 56%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
-}
 
-@layer base {
+  .font-audio-wide {
+    font-family: 'Audio Wide', sans-serif;
+  }
+
   * {
     @apply border-border;
   }
   
   html {
     scroll-behavior: smooth;
+    color-scheme: light;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased font-audiowide;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-audiowide tracking-tight;
   }
 }
 
 @layer utilities {
-  .bg-tupla-primary {
-    background-color: hsl(var(--tupla-primary));
+  .tracking-minimal {
+    letter-spacing: 0.2em;
   }
-  
-  .bg-tupla-dark {
-    background-color: hsl(var(--tupla-dark));
-  }
-  
-  .bg-tupla-accent {
-    background-color: hsl(var(--tupla-accent));
-  }
-  
-  .bg-tupla-light {
-    background-color: hsl(var(--tupla-light));
-  }
-  
-  .text-tupla-primary {
-    color: hsl(var(--tupla-primary));
-  }
-  
-  .text-tupla-dark {
-    color: hsl(var(--tupla-dark));
-  }
-  
-  .text-tupla-accent {
-    color: hsl(var(--tupla-accent));
-  }
-  
-  .border-tupla-primary {
-    border-color: hsl(var(--tupla-primary));
-  }
-  
-  .border-tupla-accent {
-    border-color: hsl(var(--tupla-accent));
-  }
-  
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-in-out;
-  }
-  
-  .animate-slide-up {
-    animation: slideUp 0.8s ease-out;
-  }
-  
-  .animate-scale-in {
-    animation: scaleIn 0.5s ease-out;
-  }
-}
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+  .tracking-extrawide {
+    letter-spacing: 0.3em;
   }
-  to {
-    opacity: 1;
-  }
-}
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+   .font-plus-jakarta {
+     font-family: var(--font-plus-jakarta), sans-serif;
+   }
 
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
+   .font-inter {
+     font-family: var(--font-inter), sans-serif;
+   }
+
+  /* Floating animations */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
   }
-  to {
-    opacity: 1;
-    transform: scale(1);
+
+  .animate-float-delayed {
+    animation: float-delayed 3s ease-in-out infinite;
+    animation-delay: 0.5s;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+  @keyframes float-delayed {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .content-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px;
+  }
+
+  /* Modern :has() usage for navigation hover effects */
+  .nav-links-container {
+    transition: all 0.3s ease;
+  }
+  .nav-links-container:has(a:hover) a:not(:hover) {
+    opacity: 0.3;
+    filter: blur(1px);
+  }
+
+  /* Native CSS Scroll-Driven Animations */
+  @keyframes scroll-reveal {
+    from {
+      opacity: 0;
+      transform: scale(0.8) translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  .animate-scroll-reveal {
+    animation: scroll-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+  }
+
+  /* Parallax effect for section 3 */
+  @keyframes parallaxMove {
+    from {
+      transform: translateY(var(--parallax-offset, 0));
+    }
+  }
+
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    .parallax-wrapper {
+      view-timeline-name: --parallax-tl;
+      view-timeline-axis: block;
+    }
+
+    .parallax-layer {
+      animation: parallaxMove linear both;
+      animation-timeline: --parallax-tl;
+      animation-range: entry 25% cover 75%;
+    }
+
+    .parallax-layer:nth-child(1) {
+      --parallax-offset: 100px;
+    }
+
+    .parallax-layer:nth-child(2) {
+      --parallax-offset: 200px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .parallax-layer {
+      animation: none;
+    }
   }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(var(--tupla-dark));
+  @apply bg-background;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--tupla-primary));
-  border-radius: 4px;
+  @apply bg-[#BFB6AE]/40 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--tupla-accent));
-}
-@keyframes reveal-tech {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-    background-color: transparent;
-    box-shadow: none;
-  }
-  50% {
-    transform: translateY(0);
-    opacity: 1;
-    background-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.3);
-  }
-  100% {
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
-  }
-}
-
-@keyframes reveal-tech {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-    background-color: transparent;
-    box-shadow: none;
-  }
-  50% {
-    transform: translateY(0);
-    opacity: 1;
-    background-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 4px 20px rgba(30, 144, 255, 0.3);
-  }
-  100% {
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 0 30px rgba(30, 144, 255, 0.4);
-  }
-}
-
-@keyframes glow-tech {
-  0%, 100% {
-    box-shadow: 0 0 0px rgba(30, 144, 255, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 15px rgba(30, 144, 255, 0.5);
-  }
-}
-
-@keyframes scan-line {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-}
-
-.animate-reveal-tech {
-  animation: reveal-tech 0.6s ease-out forwards;
-}
-
-.glow-tech {
-  animation: glow-tech 3s ease-in-out infinite;
-}
-
-.animate-scan-line {
-  animation: scan-line 2.5s infinite;
-}
-
-/* Rejilla tipo holograma */
-.hologram::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(rgba(30,144,255,0.05) 1px, transparent 1px), 
-                    linear-gradient(90deg, rgba(30,144,255,0.05) 1px, transparent 1px);
-  background-size: 20px 20px;
-  pointer-events: none;
+  @apply bg-[#BFB6AE]/60;
 }
